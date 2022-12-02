@@ -95,3 +95,41 @@ int main() {
                        }
 
                   }
+                                                          
+                                                                      
+#4 Cặp số sinh đôi
+ #include <iostream>
+using namespace std;
+int main () {
+    int a, b , c = 0, d = 0, e = 0 , g = 0;
+    cin >> a;
+    for (int i = 3; i <= a; i++)
+    {   int  b = 0;
+        for (int j = 1; j <= i ; j++) {
+            if (i % j == 0) b++;
+            if (j == i) {
+                if (b == 2) {
+
+                    c = i;
+                    d = i + 2;
+
+                    int e = 0;
+                    for (int k = 1; k <= d; k++) {
+
+                        if (d % k == 0) e++;
+                        if (k == d) {
+
+                            if (e == 2 && d <= a) {
+
+                                cout << c << ", " << d << endl;
+                                g++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    cout << "Tong: " << g << " cap so sinh doi < " << a;
+    return 0;
+}                                                                    
