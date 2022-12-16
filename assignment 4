@@ -1,0 +1,139 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int input() {
+    int a;
+    cin >> a;
+    return a;
+}
+int input(int& a) {
+    cin >> a;
+    return a;
+}
+//4
+int sum_common_prime(int m, int n) {
+    int s = 0, c ;
+    
+    for (int i = 2; i <= m; i++) {
+        if (m % i == 0 && n % i == 0) {
+                c = 0;
+                for (int j = 2; j <= sqrt(i); j++) {
+                    if (i % j == 0) {
+                        c++;
+                    }
+                }
+                if (c == 0) {s += i;}            
+        }
+    }
+    if (s == 0) {return -1;}
+    return s; 
+}
+
+//5
+ int TongChuSo(int a) {
+    int s1, s2 = 0;
+    for (int i = 1; i <= a; i++) {
+        if (a >= 10) {
+            s1 = a % 10;
+            s2 += s1;
+            a /= 10;
+        }
+    }
+    s2 = s2 + a;
+    return s2; 
+}
+
+//6
+int gcd(int m, int n) {
+    int s6;
+    for (int i = 1; i <= m; i++) {
+        if (m % i == 0 && n % i == 0) s6 = i;
+    }
+    return s6;
+}
+
+//7
+#include <math.h>
+#include <bits/stdc++.h>
+float calculate(int n) {
+    float s7 = 0, s72 = 0;
+    for (int i = 1; i <= n; i++) {
+        s7 += i;
+        s72 = sqrt(s7);
+        s7 = s72;
+
+    }
+    return s7;
+}
+
+
+//8
+int reverse(int n) {
+    int s8, s81 = 0, s82 = 0;
+    for (int i = 1; i <= n; i++) {
+        if (n >= 10) {
+            s81 = n % 10;
+            s82 = s82*10 + s81;
+            n /= 10;
+        }
+    }
+    s82 = s82*10 + n;
+    return s82;
+}
+
+//9 
+/*
+#define MAX 300
+
+int Fibo(int);
+
+int main()
+{
+	int x;
+	cin >> x;
+	if (x < 1 || x>30)
+		cout << "So " << x << " khong nam trong khoang [1,30]." << endl;
+	else
+	{
+		cout << Fibo(x) << endl;
+	}
+	return 0;
+}
+
+int Fibo(int x)
+{
+    int f0 = 0;
+    int f1 = 1;
+    int fn = 1;
+    int i;
+if(x == 0 || x == 1) 
+		return 1;
+    else {
+        for (i = 2; i < x; i++) {
+            f0 = f1;
+            f1 = fn;
+            fn = f0 + f1;
+        }
+    }
+    return fn;
+}
+*/
+
+int main () {
+    long long n, s10 = 1;
+    cin >> n;
+    if (n >= 1) {
+    if (n % 2 == 0) {
+        for (int i = 2; i <= n; i+=2) {
+            s10 *=  i;
+        }
+    }
+    else {
+        for (int i = 1; i <= n; i+=2) {
+            s10 *= i ;
+        }
+    }
+    cout << s10;
+    }
+    return 0;
+}
