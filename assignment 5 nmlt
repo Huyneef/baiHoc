@@ -1,21 +1,6 @@
-//2
-int main () {
-    float s, a, b , d = -1, c = 1;
-    float eps = 0.0001;
-    float x; 
-    cin >> x;
-    s = a = b = x;
-    for (int i = 3; a > eps; i+= 2, d = -d) {
-        a = (b*= x*x) / (c *= i*(i-1));
-        s += d*a; 
-         
-    }
-    cout << setprecision(4) <<  fixed <<  s;
-    
-    return 0;
-}
 
-//1
+//1 Tổng số nguyên tố thứ N
+
 int nhapSo() {
     int n;
     cin >> n;
@@ -50,3 +35,177 @@ int main () {
     
     return 0;
 }
+
+//2   Tìm sin(x) với x(radian)
+
+/*
+int main () {
+    double s, a, b = 1 , c = 1;
+    int d = -1;
+    double epsilon = 0.00001;
+    double x; 
+    cin >> x;
+    s = a = b = x;
+    for (int i = 3; a > epsilon; i+= 2, d = -d) {
+        a = (b*= x*x) / (c *= i*(i-1));
+        s += d*a; 
+    }
+    cout << setprecision(4) <<  fixed <<  s;
+    return 0;
+}
+*/
+
+//3 Tìm số lớn nhất. Nhập lần lượt các số cần kiểm tra (nhập 0 báo hiệu kết thúc)
+
+
+int largest_input(){
+    int n, mid = 0;
+    int maX;
+    cin >> n;
+    if(!n) {
+        return mid;
+    }
+    else {
+        mid = max(mid, n);
+        maX = largest_input();
+    }
+    return max(maX, mid);
+}
+int main(){
+	cout << largest_input();
+}
+
+//4   Kiểm tra trong kgoang3 [a,b] có bao nhiêu snt mà đảo ngc vẫn là snt
+
+/*
+using namespace std;
+int inverNumber(int n) {
+    int s = 0;
+    while (n) {
+        s = s*10 + n%10;
+        n /= 10;
+    }
+    return s;
+}
+
+bool primeNumber(int n) {
+    if(n < 2) {return 0;}
+    for (int i = 2; i*i <= n; i++) {
+        if (n % i == 0) return 0;
+    }
+    return n>1;
+}
+int main () {
+    int a, b, s = 0, c = 0;
+    cin >> a >> b;
+    if (a <= b) {
+    for (int i = a; i <= b; i++) {
+        if(i > 2 && i % 2 == 0) {continue;}
+        if(i % 3 == 0) {continue;}
+        if(primeNumber(i) && primeNumber(inverNumber(i))) {
+            c++;
+    }
+}
+}
+    cout << c;
+}
+*/
+
+
+//6 
+
+/*
+int gcd(int& m, int& n) {
+    if(m>n) {
+        m = m-n; return gcd(m,n);
+    }
+    if(m < n) {
+        n = n - m; return gcd(m,n);
+    }
+    else return m;
+
+}
+
+int main() {
+	int m, n;
+	cin >> m >> n;
+	cout << gcd(m, n);
+	return 0;
+}
+*/
+
+
+//7  chuỗi dễ dùng dệ quy
+
+/*
+float calculate(int n) {
+    if(n == 1) return 1;
+    else return sqrt(n + calculate(n-1));
+}
+
+int main() {
+	int n;
+	cin >> n;
+    cout <<fixed<<setprecision(2)<< calculate(n);
+    return 0;
+}
+*/
+
+//8  số đảo ngược dùng đệ quy
+
+/* 
+int re1(int n, int re) {
+    if (!n) return re;
+    return re1(n/10, 10*re + n%10) ;
+}
+int reverse(int n) {
+    return re1(n, 0);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << reverse(n);
+}
+
+*/
+
+//9 fibonacci
+
+
+/*
+#define MAX 300
+
+int Fibo(int);
+
+int main()
+{
+	int x;
+	cin >> x;
+    if(x < 1 || x > 30) cout << "So " << x << " khong nam trong khoang [1,30].";
+    else cout << Fibo(x);
+}
+
+int Fibo(int n) {
+    if (n == 1) return 1;
+    if(n == 0) return 0;
+    else return Fibo(n-1) + Fibo(n-2);
+}
+*/
+
+//10 Tính phép chia có dư nhưng không dùng phép chia + dùng đệ quy
+
+/*
+#include <iostream>
+using namespace std;
+int modulo(int m, int n){
+    if(m >= n) {m = m - n; return modulo(m,n);}
+    else return m;
+}
+
+
+int main (){
+    int m, n; cin >> m >> n;
+	cout << modulo(m, n);
+} 
+*/
