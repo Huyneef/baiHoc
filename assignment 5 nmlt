@@ -59,17 +59,10 @@ int main () {
 
 
 int largest_input(){
-    int n, mid = 0;
-    int maX;
+      int n;
     cin >> n;
-    if(!n) {
-        return mid;
-    }
-    else {
-        mid = max(mid, n);
-        maX = largest_input();
-    }
-    return max(maX, mid);
+    if(!n) return 0;
+    else return max(n,largest_input());
 }
 int main(){
 	cout << largest_input();
