@@ -102,8 +102,20 @@ int main () {
 }
     cout << c;
 }
-*/
+*/ 
 
+//5 
+using namespace std;
+int input(int& n) {
+cin >> n;
+    return n;
+}
+int sum(int n, int& s) {
+    if(n < 10) return n;
+    if(n == 10) {s = 1;}
+    s = sum(n%10,s) + sum(n/10,s);
+    return s;
+}
 
 //6 
 
